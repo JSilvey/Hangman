@@ -29,21 +29,23 @@
         private void InitializeComponent()
         {
             this.gbPanelDrawing = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.gbUserGuess = new System.Windows.Forms.GroupBox();
-            this.btnGuessLetter = new System.Windows.Forms.Button();
-            this.btnGuessWord = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMissedLetters = new System.Windows.Forms.Label();
-            this.txtMissedLetters = new System.Windows.Forms.TextBox();
-            this.lblMissedWords = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblWordLength = new System.Windows.Forms.Label();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lstMissedWords = new System.Windows.Forms.ListBox();
+            this.lblMissedWords = new System.Windows.Forms.Label();
+            this.txtMissedLetters = new System.Windows.Forms.TextBox();
+            this.lblMissedLetters = new System.Windows.Forms.Label();
+            this.gbUserGuess = new System.Windows.Forms.GroupBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtword = new System.Windows.Forms.TextBox();
+            this.txtLetter = new System.Windows.Forms.TextBox();
+            this.btnGuessWord = new System.Windows.Forms.Button();
+            this.btnGuessLetter = new System.Windows.Forms.Button();
             this.gbPanelDrawing.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbUserGuess.SuspendLayout();
             this.SuspendLayout();
@@ -57,13 +59,32 @@
             this.gbPanelDrawing.TabIndex = 0;
             this.gbPanelDrawing.TabStop = false;
             // 
+            // panel1
+            // 
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Enabled = false;
+            this.panel1.Location = new System.Drawing.Point(3, 16);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(266, 385);
+            this.panel1.TabIndex = 300;
+            // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblWordLength);
             this.groupBox2.Location = new System.Drawing.Point(12, 12);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(417, 150);
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
+            // 
+            // lblWordLength
+            // 
+            this.lblWordLength.AutoSize = true;
+            this.lblWordLength.Location = new System.Drawing.Point(7, 131);
+            this.lblWordLength.Name = "lblWordLength";
+            this.lblWordLength.Size = new System.Drawing.Size(68, 13);
+            this.lblWordLength.TabIndex = 0;
+            this.lblWordLength.Text = "Word length:";
             // 
             // groupBox3
             // 
@@ -77,90 +98,25 @@
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
-            // gbUserGuess
+            // lstMissedWords
             // 
-            this.gbUserGuess.Controls.Add(this.label2);
-            this.gbUserGuess.Controls.Add(this.label1);
-            this.gbUserGuess.Controls.Add(this.textBox2);
-            this.gbUserGuess.Controls.Add(this.textBox1);
-            this.gbUserGuess.Controls.Add(this.btnGuessWord);
-            this.gbUserGuess.Controls.Add(this.btnGuessLetter);
-            this.gbUserGuess.Location = new System.Drawing.Point(12, 335);
-            this.gbUserGuess.Name = "gbUserGuess";
-            this.gbUserGuess.Size = new System.Drawing.Size(417, 81);
-            this.gbUserGuess.TabIndex = 3;
-            this.gbUserGuess.TabStop = false;
-            this.gbUserGuess.Text = "Guess a Letter or Word";
+            this.lstMissedWords.BackColor = System.Drawing.SystemColors.Control;
+            this.lstMissedWords.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.lstMissedWords.FormattingEnabled = true;
+            this.lstMissedWords.Location = new System.Drawing.Point(91, 43);
+            this.lstMissedWords.Name = "lstMissedWords";
+            this.lstMissedWords.Size = new System.Drawing.Size(320, 93);
+            this.lstMissedWords.TabIndex = 100;
+            this.lstMissedWords.TabStop = false;
             // 
-            // btnGuessLetter
+            // lblMissedWords
             // 
-            this.btnGuessLetter.Location = new System.Drawing.Point(77, 47);
-            this.btnGuessLetter.Name = "btnGuessLetter";
-            this.btnGuessLetter.Size = new System.Drawing.Size(75, 23);
-            this.btnGuessLetter.TabIndex = 2;
-            this.btnGuessLetter.Text = "Guess Letter";
-            this.btnGuessLetter.UseVisualStyleBackColor = true;
-            this.btnGuessLetter.Click += new System.EventHandler(this.btnGuessLetter_Click);
-            // 
-            // btnGuessWord
-            // 
-            this.btnGuessWord.Location = new System.Drawing.Point(255, 47);
-            this.btnGuessWord.Name = "btnGuessWord";
-            this.btnGuessWord.Size = new System.Drawing.Size(75, 23);
-            this.btnGuessWord.TabIndex = 3;
-            this.btnGuessWord.Text = "Guess Word";
-            this.btnGuessWord.UseVisualStyleBackColor = true;
-            this.btnGuessWord.Click += new System.EventHandler(this.btnGuessWord_Click);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(115, 21);
-            this.textBox1.MaxLength = 1;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(21, 20);
-            this.textBox1.TabIndex = 0;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(243, 21);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 1;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Letter:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Word:";
-            // 
-            // panel1
-            // 
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 16);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(266, 385);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblMissedLetters
-            // 
-            this.lblMissedLetters.AutoSize = true;
-            this.lblMissedLetters.Location = new System.Drawing.Point(7, 20);
-            this.lblMissedLetters.Name = "lblMissedLetters";
-            this.lblMissedLetters.Size = new System.Drawing.Size(78, 13);
-            this.lblMissedLetters.TabIndex = 10;
-            this.lblMissedLetters.Text = "Missed Letters:";
+            this.lblMissedWords.AutoSize = true;
+            this.lblMissedWords.Location = new System.Drawing.Point(7, 46);
+            this.lblMissedWords.Name = "lblMissedWords";
+            this.lblMissedWords.Size = new System.Drawing.Size(77, 13);
+            this.lblMissedWords.TabIndex = 211;
+            this.lblMissedWords.Text = "Missed Words:";
             // 
             // txtMissedLetters
             // 
@@ -172,25 +128,86 @@
             this.txtMissedLetters.TabIndex = 101;
             this.txtMissedLetters.TabStop = false;
             // 
-            // lblMissedWords
+            // lblMissedLetters
             // 
-            this.lblMissedWords.AutoSize = true;
-            this.lblMissedWords.Location = new System.Drawing.Point(7, 46);
-            this.lblMissedWords.Name = "lblMissedWords";
-            this.lblMissedWords.Size = new System.Drawing.Size(77, 13);
-            this.lblMissedWords.TabIndex = 211;
-            this.lblMissedWords.Text = "Missed Words:";
+            this.lblMissedLetters.AutoSize = true;
+            this.lblMissedLetters.Location = new System.Drawing.Point(7, 20);
+            this.lblMissedLetters.Name = "lblMissedLetters";
+            this.lblMissedLetters.Size = new System.Drawing.Size(78, 13);
+            this.lblMissedLetters.TabIndex = 10;
+            this.lblMissedLetters.Text = "Missed Letters:";
             // 
-            // lstMissedWords
+            // gbUserGuess
             // 
-            this.lstMissedWords.BackColor = System.Drawing.SystemColors.Control;
-            this.lstMissedWords.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lstMissedWords.FormattingEnabled = true;
-            this.lstMissedWords.Location = new System.Drawing.Point(91, 43);
-            this.lstMissedWords.Name = "lstMissedWords";
-            this.lstMissedWords.Size = new System.Drawing.Size(320, 93);
-            this.lstMissedWords.TabIndex = 100;
-            this.lstMissedWords.TabStop = false;
+            this.gbUserGuess.Controls.Add(this.label2);
+            this.gbUserGuess.Controls.Add(this.label1);
+            this.gbUserGuess.Controls.Add(this.txtword);
+            this.gbUserGuess.Controls.Add(this.txtLetter);
+            this.gbUserGuess.Controls.Add(this.btnGuessWord);
+            this.gbUserGuess.Controls.Add(this.btnGuessLetter);
+            this.gbUserGuess.Location = new System.Drawing.Point(12, 335);
+            this.gbUserGuess.Name = "gbUserGuess";
+            this.gbUserGuess.Size = new System.Drawing.Size(417, 81);
+            this.gbUserGuess.TabIndex = 3;
+            this.gbUserGuess.TabStop = false;
+            this.gbUserGuess.Text = "Guess a Letter or Word";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(202, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 5;
+            this.label2.Text = "Word:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(74, 24);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Letter:";
+            // 
+            // txtword
+            // 
+            this.txtword.Location = new System.Drawing.Point(243, 21);
+            this.txtword.Name = "txtword";
+            this.txtword.Size = new System.Drawing.Size(100, 20);
+            this.txtword.TabIndex = 2;
+            this.txtword.TabStop = false;
+            // 
+            // txtLetter
+            // 
+            this.txtLetter.Location = new System.Drawing.Point(115, 21);
+            this.txtLetter.MaxLength = 1;
+            this.txtLetter.Name = "txtLetter";
+            this.txtLetter.Size = new System.Drawing.Size(21, 20);
+            this.txtLetter.TabIndex = 0;
+            this.txtLetter.TabStop = false;
+            // 
+            // btnGuessWord
+            // 
+            this.btnGuessWord.Location = new System.Drawing.Point(255, 47);
+            this.btnGuessWord.Name = "btnGuessWord";
+            this.btnGuessWord.Size = new System.Drawing.Size(75, 23);
+            this.btnGuessWord.TabIndex = 3;
+            this.btnGuessWord.TabStop = false;
+            this.btnGuessWord.Text = "Guess Word";
+            this.btnGuessWord.UseVisualStyleBackColor = true;
+            this.btnGuessWord.Click += new System.EventHandler(this.btnGuessWord_Click);
+            // 
+            // btnGuessLetter
+            // 
+            this.btnGuessLetter.Location = new System.Drawing.Point(77, 47);
+            this.btnGuessLetter.Name = "btnGuessLetter";
+            this.btnGuessLetter.Size = new System.Drawing.Size(75, 23);
+            this.btnGuessLetter.TabIndex = 1;
+            this.btnGuessLetter.TabStop = false;
+            this.btnGuessLetter.Text = "Guess Letter";
+            this.btnGuessLetter.UseVisualStyleBackColor = true;
+            this.btnGuessLetter.Click += new System.EventHandler(this.btnGuessLetter_Click);
             // 
             // Form1
             // 
@@ -208,6 +225,8 @@
             this.Text = "Hangman By: John Silvey";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.gbPanelDrawing.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.gbUserGuess.ResumeLayout(false);
@@ -224,15 +243,16 @@
         private System.Windows.Forms.GroupBox gbUserGuess;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtword;
+        private System.Windows.Forms.TextBox txtLetter;
         private System.Windows.Forms.Button btnGuessWord;
         private System.Windows.Forms.Button btnGuessLetter;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.ListBox lstMissedWords;
         private System.Windows.Forms.Label lblMissedWords;
         private System.Windows.Forms.TextBox txtMissedLetters;
         private System.Windows.Forms.Label lblMissedLetters;
+        private System.Windows.Forms.Label lblWordLength;
+        public System.Windows.Forms.Panel panel1;
     }
 }
 

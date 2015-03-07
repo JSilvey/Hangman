@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace HangmanGame
 {
@@ -19,8 +20,25 @@ namespace HangmanGame
 
         private void Form1_Shown(object sender, EventArgs e)
         {
-            DrawGallows();
+            NewGame();
         }
+
+        //Method to get a random word from text file.
+        string GetRandomWord()
+        {
+            //create an array from the lines of the text file
+            // in this text file there is 1 word per line
+            string[] words = File.ReadAllLines("words.txt");
+            Random random = new Random();
+            //return a random word from 0 to end of array
+            return words[random.Next(0,words.Length -1)];
+        }
+
+        int numWrong = 0;
+
+        string word ="";
+
+        List<Label> labels = new List<Label>();
 
         enum BodyParts
         {
@@ -93,27 +111,96 @@ namespace HangmanGame
             //Draw bottom support bar
             g.DrawLine(p, new Point(0, 380), new Point(266, 380));
             
+            
+        }
+
+        //Method to create labels
+        void CreateLabels()
+        {
+            //get random word
+            word=GetRandomWord();
+            //create a character array for each character in word
+            char[] chars = word.ToLower().ToCharArray();
+            //create the space between the labels
+            int blankSpace =325 / chars.Length;
+            //create label for each character
+            for(int i = 0; i< chars.Length; i ++)
+            {
+                labels.Add(new Label());
+                labels[i].Location = new Point((i * blankSpace) +25, 100);
+                labels[i].Text = "_";
+                labels[i].Parent = groupBox2;
+                labels[i].BringToFront();
+                labels[i].CreateControl();
+            }
+            //set label text to display word length
+            lblWordLength.Text = ("Word length: " + word.Length);
+            //set max length of word guess text box to length of word
+            txtword.MaxLength = word.Length;
+        }
+        //Method to create a new game
+        void NewGame()
+        {
+            CreateLabels();
+            numWrong = 0;
+            DrawGallows();
+                       
+        }
+
+        //Method to check if game is over
+        void GameOver()
+        {
+            if (numWrong==8)
+            {
+                MessageBox.Show("You Lost! The word was " + word, "SORRY!");
+                NewGame();
+            }
         }
 
         //Test user word against selected word       
         private void btnGuessWord_Click(object sender, EventArgs e)
-        {
-
+        { 
+            if (txtword.Text==word)
+            {
+                MessageBox.Show("You Guessed the word!", "CONGRATS!");
+                NewGame();
+            }
+            else
+            {
+                lstMissedWords.Text += txtword.Text;
+                DrawBodyPart((BodyParts)numWrong);
+                numWrong++;
+                GameOver();
+            }
         }
         //Test user letter against selected word
         private void btnGuessLetter_Click(object sender, EventArgs e)
         {
-            DrawBodyPart(BodyParts.Head);
-            DrawBodyPart(BodyParts.Body);
-            DrawBodyPart(BodyParts.LeftArm);
-            DrawBodyPart(BodyParts.RightArm);
-            DrawBodyPart(BodyParts.LeftLeg);
-            DrawBodyPart(BodyParts.RightLeg);
-            DrawBodyPart(BodyParts.LeftEye);
-            DrawBodyPart(BodyParts.RightEye);
-            DrawBodyPart(BodyParts.Mouth);
-        }
+            char letter = txtLetter.Text.ToLower().ToCharArray()[0];
+            if (!char.IsLetter(letter))
+            {
+                MessageBox.Show("Only Characters are allowed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            if (word.Contains(letter))
+            {
+                char[] letters = word.ToCharArray();
+                for(int i = 0; i<letters.Length; i++)
+                {
+                    if (letters[i] == letter)
+                        labels[i].Text = letter.ToString();
+                }
+            }                
+            else
+            {
+                txtMissedLetters.Text+= (letter.ToString() + ", ");
+                DrawBodyPart((BodyParts)numWrong);
+                numWrong++;
+                GameOver();
 
+            }
+            txtLetter.Text = "";
+        }          
         
     }
 }
