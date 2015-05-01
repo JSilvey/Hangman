@@ -44,16 +44,21 @@
             this.txtLetter = new System.Windows.Forms.TextBox();
             this.btnGuessWord = new System.Windows.Forms.Button();
             this.btnGuessLetter = new System.Windows.Forms.Button();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.newGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forfeitGameToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.quitExitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.gbPanelDrawing.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.gbUserGuess.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbPanelDrawing
             // 
             this.gbPanelDrawing.Controls.Add(this.panel1);
-            this.gbPanelDrawing.Location = new System.Drawing.Point(435, 12);
+            this.gbPanelDrawing.Location = new System.Drawing.Point(435, 38);
             this.gbPanelDrawing.Name = "gbPanelDrawing";
             this.gbPanelDrawing.Size = new System.Drawing.Size(272, 404);
             this.gbPanelDrawing.TabIndex = 0;
@@ -71,7 +76,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblWordLength);
-            this.groupBox2.Location = new System.Drawing.Point(12, 12);
+            this.groupBox2.Location = new System.Drawing.Point(12, 38);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(417, 150);
             this.groupBox2.TabIndex = 1;
@@ -92,7 +97,7 @@
             this.groupBox3.Controls.Add(this.lblMissedWords);
             this.groupBox3.Controls.Add(this.txtMissedLetters);
             this.groupBox3.Controls.Add(this.lblMissedLetters);
-            this.groupBox3.Location = new System.Drawing.Point(15, 168);
+            this.groupBox3.Location = new System.Drawing.Point(15, 194);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(417, 161);
             this.groupBox3.TabIndex = 2;
@@ -145,7 +150,7 @@
             this.gbUserGuess.Controls.Add(this.txtLetter);
             this.gbUserGuess.Controls.Add(this.btnGuessWord);
             this.gbUserGuess.Controls.Add(this.btnGuessLetter);
-            this.gbUserGuess.Location = new System.Drawing.Point(12, 335);
+            this.gbUserGuess.Location = new System.Drawing.Point(12, 361);
             this.gbUserGuess.Name = "gbUserGuess";
             this.gbUserGuess.Size = new System.Drawing.Size(417, 81);
             this.gbUserGuess.TabIndex = 3;
@@ -209,18 +214,54 @@
             this.btnGuessLetter.UseVisualStyleBackColor = true;
             this.btnGuessLetter.Click += new System.EventHandler(this.btnGuessLetter_Click);
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.newGameToolStripMenuItem,
+            this.forfeitGameToolStripMenuItem,
+            this.quitExitToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(719, 24);
+            this.menuStrip1.TabIndex = 4;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // newGameToolStripMenuItem
+            // 
+            this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.newGameToolStripMenuItem.Text = "New Game";
+            this.newGameToolStripMenuItem.Click += new System.EventHandler(this.newGameToolStripMenuItem_Click);
+            // 
+            // forfeitGameToolStripMenuItem
+            // 
+            this.forfeitGameToolStripMenuItem.Name = "forfeitGameToolStripMenuItem";
+            this.forfeitGameToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
+            this.forfeitGameToolStripMenuItem.Text = "Forfeit Game";
+            this.forfeitGameToolStripMenuItem.Click += new System.EventHandler(this.forfeitGameToolStripMenuItem_Click);
+            // 
+            // quitExitToolStripMenuItem
+            // 
+            this.quitExitToolStripMenuItem.Name = "quitExitToolStripMenuItem";
+            this.quitExitToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
+            this.quitExitToolStripMenuItem.Text = "Quit/Exit";
+            this.quitExitToolStripMenuItem.Click += new System.EventHandler(this.quitExitToolStripMenuItem_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(719, 428);
+            this.ClientSize = new System.Drawing.Size(719, 459);
             this.Controls.Add(this.gbUserGuess);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.gbPanelDrawing);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = "Hangman By: John Silvey";
             this.Shown += new System.EventHandler(this.Form1_Shown);
@@ -231,7 +272,10 @@
             this.groupBox3.PerformLayout();
             this.gbUserGuess.ResumeLayout(false);
             this.gbUserGuess.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -253,6 +297,10 @@
         private System.Windows.Forms.Label lblMissedLetters;
         private System.Windows.Forms.Label lblWordLength;
         public System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem newGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem forfeitGameToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem quitExitToolStripMenuItem;
     }
 }
 

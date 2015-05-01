@@ -200,6 +200,22 @@ namespace HangmanGame
 
             }
             txtLetter.Text = "";
+        }
+
+        private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewGame();
+        }
+
+        private void forfeitGameToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            numWrong = 8;
+            GameOver();
+        }
+
+        private void quitExitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }          
         
     }
