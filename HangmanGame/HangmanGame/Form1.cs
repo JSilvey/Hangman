@@ -141,6 +141,9 @@ namespace HangmanGame
         //Method to create a new game
         void NewGame()
         {
+            panel1.Refresh();
+            txtMissedLetters.Clear();
+            lstMissedWords.Items.Clear();
             CreateLabels();
             numWrong = 0;
             DrawGallows();
