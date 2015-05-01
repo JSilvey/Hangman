@@ -181,7 +181,6 @@
             this.txtword.Name = "txtword";
             this.txtword.Size = new System.Drawing.Size(100, 20);
             this.txtword.TabIndex = 2;
-            this.txtword.TabStop = false;
             // 
             // txtLetter
             // 
@@ -190,7 +189,6 @@
             this.txtLetter.Name = "txtLetter";
             this.txtLetter.Size = new System.Drawing.Size(21, 20);
             this.txtLetter.TabIndex = 0;
-            this.txtLetter.TabStop = false;
             // 
             // btnGuessWord
             // 
@@ -198,7 +196,6 @@
             this.btnGuessWord.Name = "btnGuessWord";
             this.btnGuessWord.Size = new System.Drawing.Size(75, 23);
             this.btnGuessWord.TabIndex = 3;
-            this.btnGuessWord.TabStop = false;
             this.btnGuessWord.Text = "Guess Word";
             this.btnGuessWord.UseVisualStyleBackColor = true;
             this.btnGuessWord.Click += new System.EventHandler(this.btnGuessWord_Click);
@@ -209,7 +206,6 @@
             this.btnGuessLetter.Name = "btnGuessLetter";
             this.btnGuessLetter.Size = new System.Drawing.Size(75, 23);
             this.btnGuessLetter.TabIndex = 1;
-            this.btnGuessLetter.TabStop = false;
             this.btnGuessLetter.Text = "Guess Letter";
             this.btnGuessLetter.UseVisualStyleBackColor = true;
             this.btnGuessLetter.Click += new System.EventHandler(this.btnGuessLetter_Click);
@@ -263,6 +259,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hangman By: John Silvey";
             this.Shown += new System.EventHandler(this.Form1_Shown);
             this.gbPanelDrawing.ResumeLayout(false);

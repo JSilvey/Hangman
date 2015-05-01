@@ -162,47 +162,64 @@ namespace HangmanGame
 
         //Test user word against selected word       
         private void btnGuessWord_Click(object sender, EventArgs e)
-        { 
-            if (txtword.Text==word)
+        {
+            //Check to make sure the textbox is not left blank
+            if (string.IsNullOrEmpty(txtword.Text))
             {
-                MessageBox.Show("You Guessed the word!", "CONGRATS!");
-                NewGame();
+                MessageBox.Show("Guessed Word Box Cannot Be Left Blank", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             else
             {
-                lstMissedWords.Text += txtword.Text;
-                DrawBodyPart((BodyParts)numWrong);
-                numWrong++;
-                GameOver();
+
+                if (txtword.Text == word)
+                {
+                    MessageBox.Show("You Guessed the word!", "CONGRATS!");
+                    NewGame();
+                }
+                else
+                {
+                    lstMissedWords.Text += txtword.Text;
+                    DrawBodyPart((BodyParts)numWrong);
+                    numWrong++;
+                    GameOver();
+                }
             }
         }
         //Test user letter against selected word
         private void btnGuessLetter_Click(object sender, EventArgs e)
         {
-            char letter = txtLetter.Text.ToLower().ToCharArray()[0];
-            if (!char.IsLetter(letter))
+            //Check to make sure the textbox is not left blank
+            if (string.IsNullOrEmpty(txtLetter.Text))
             {
-                MessageBox.Show("Only Characters are allowed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                MessageBox.Show("Guessed Letter Box Cannot Be Left Blank.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            if (word.Contains(letter))
-            {
-                char[] letters = word.ToCharArray();
-                for(int i = 0; i<letters.Length; i++)
-                {
-                    if (letters[i] == letter)
-                        labels[i].Text = letter.ToString();
-                }
-            }                
             else
             {
-                txtMissedLetters.Text+= (letter.ToString() + ", ");
-                DrawBodyPart((BodyParts)numWrong);
-                numWrong++;
-                GameOver();
+                char letter = txtLetter.Text.ToLower().ToCharArray()[0];
+                if (!char.IsLetter(letter))
+                {
+                    MessageBox.Show("Only Characters are allowed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (word.Contains(letter))
+                {
+                    char[] letters = word.ToCharArray();
+                    for (int i = 0; i < letters.Length; i++)
+                    {
+                        if (letters[i] == letter)
+                            labels[i].Text = letter.ToString();
+                    }
+                }
+                else
+                {
+                    txtMissedLetters.Text += (letter.ToString() + ", ");
+                    DrawBodyPart((BodyParts)numWrong);
+                    numWrong++;
+                    GameOver();
 
+                }
+                txtLetter.Text = "";
             }
-            txtLetter.Text = "";
         }
 
         private void newGameToolStripMenuItem_Click(object sender, EventArgs e)
