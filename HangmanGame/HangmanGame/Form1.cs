@@ -178,7 +178,8 @@ namespace HangmanGame
                 }
                 else
                 {
-                    lstMissedWords.Text += txtword.Text;
+                    lstMissedWords.Items.Add((txtword.Text)+", ");
+                    txtword.Clear();
                     DrawBodyPart((BodyParts)numWrong);
                     numWrong++;
                     GameOver();
@@ -199,6 +200,7 @@ namespace HangmanGame
                 if (!char.IsLetter(letter))
                 {
                     MessageBox.Show("Only Characters are allowed!", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txtLetter.Clear();
                     return;
                 }
                 if (word.Contains(letter))
