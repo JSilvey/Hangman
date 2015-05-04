@@ -35,6 +35,7 @@ namespace HangmanGame
         }
 
         int numWrong = 0;
+        int numLetters = 0;
 
         string word ="";
 
@@ -119,6 +120,8 @@ namespace HangmanGame
         {
             //get random word
             word=GetRandomWord();
+            //Message box to show word for debugging prurposes
+            //MessageBox.Show(word);
             //create a character array for each character in word
             char[] chars = word.ToLower().ToCharArray();
             //create the space between the labels
@@ -127,7 +130,7 @@ namespace HangmanGame
             for(int i = 0; i< chars.Length; i ++)
             {
                 labels.Add(new Label());
-                labels[i].Location = new Point((i * blankSpace) +25, 100);
+                labels[i].Location = new Point((i * blankSpace) +25, 90);
                 labels[i].Text = "_";
                 labels[i].Parent = groupBox2;
                 labels[i].BringToFront();
@@ -146,6 +149,7 @@ namespace HangmanGame
             lstMissedWords.Items.Clear();
             CreateLabels();
             numWrong = 0;
+            numLetters = 0;
             DrawGallows();
                        
         }
@@ -205,11 +209,17 @@ namespace HangmanGame
                 }
                 if (word.Contains(letter))
                 {
+                    numLetters++;
                     char[] letters = word.ToCharArray();
                     for (int i = 0; i < letters.Length; i++)
                     {
                         if (letters[i] == letter)
                             labels[i].Text = letter.ToString();
+                    }
+                    if (numLetters == word.Length)
+                    {
+                        MessageBox.Show("You guessed the word!\n The word was: " + word, "Congratulations!", MessageBoxButtons.OK);
+                        NewGame();
                     }
                 }
                 else
@@ -238,7 +248,8 @@ namespace HangmanGame
         private void quitExitToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
-        }          
+        }
+        
         
     }
 }

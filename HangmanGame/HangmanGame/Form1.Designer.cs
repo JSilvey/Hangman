@@ -58,7 +58,7 @@
             // gbPanelDrawing
             // 
             this.gbPanelDrawing.Controls.Add(this.panel1);
-            this.gbPanelDrawing.Location = new System.Drawing.Point(435, 38);
+            this.gbPanelDrawing.Location = new System.Drawing.Point(489, 55);
             this.gbPanelDrawing.Name = "gbPanelDrawing";
             this.gbPanelDrawing.Size = new System.Drawing.Size(272, 404);
             this.gbPanelDrawing.TabIndex = 0;
@@ -76,6 +76,7 @@
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.lblWordLength);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(12, 38);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(417, 150);
@@ -85,9 +86,9 @@
             // lblWordLength
             // 
             this.lblWordLength.AutoSize = true;
-            this.lblWordLength.Location = new System.Drawing.Point(7, 131);
+            this.lblWordLength.Location = new System.Drawing.Point(7, 122);
             this.lblWordLength.Name = "lblWordLength";
-            this.lblWordLength.Size = new System.Drawing.Size(68, 13);
+            this.lblWordLength.Size = new System.Drawing.Size(118, 24);
             this.lblWordLength.TabIndex = 0;
             this.lblWordLength.Text = "Word length:";
             // 
@@ -97,9 +98,10 @@
             this.groupBox3.Controls.Add(this.lblMissedWords);
             this.groupBox3.Controls.Add(this.txtMissedLetters);
             this.groupBox3.Controls.Add(this.lblMissedLetters);
+            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(15, 194);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(417, 161);
+            this.groupBox3.Size = new System.Drawing.Size(417, 231);
             this.groupBox3.TabIndex = 2;
             this.groupBox3.TabStop = false;
             // 
@@ -108,37 +110,38 @@
             this.lstMissedWords.BackColor = System.Drawing.SystemColors.Control;
             this.lstMissedWords.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lstMissedWords.FormattingEnabled = true;
-            this.lstMissedWords.Location = new System.Drawing.Point(91, 43);
+            this.lstMissedWords.ItemHeight = 24;
+            this.lstMissedWords.Location = new System.Drawing.Point(8, 127);
             this.lstMissedWords.Name = "lstMissedWords";
-            this.lstMissedWords.Size = new System.Drawing.Size(320, 93);
+            this.lstMissedWords.Size = new System.Drawing.Size(406, 98);
             this.lstMissedWords.TabIndex = 100;
             this.lstMissedWords.TabStop = false;
             // 
             // lblMissedWords
             // 
             this.lblMissedWords.AutoSize = true;
-            this.lblMissedWords.Location = new System.Drawing.Point(7, 46);
+            this.lblMissedWords.Location = new System.Drawing.Point(6, 100);
             this.lblMissedWords.Name = "lblMissedWords";
-            this.lblMissedWords.Size = new System.Drawing.Size(77, 13);
+            this.lblMissedWords.Size = new System.Drawing.Size(135, 24);
             this.lblMissedWords.TabIndex = 211;
             this.lblMissedWords.Text = "Missed Words:";
             // 
             // txtMissedLetters
             // 
-            this.txtMissedLetters.Location = new System.Drawing.Point(91, 17);
+            this.txtMissedLetters.Location = new System.Drawing.Point(8, 52);
             this.txtMissedLetters.MaxLength = 26;
             this.txtMissedLetters.Name = "txtMissedLetters";
             this.txtMissedLetters.ReadOnly = true;
-            this.txtMissedLetters.Size = new System.Drawing.Size(320, 20);
+            this.txtMissedLetters.Size = new System.Drawing.Size(406, 29);
             this.txtMissedLetters.TabIndex = 101;
             this.txtMissedLetters.TabStop = false;
             // 
             // lblMissedLetters
             // 
             this.lblMissedLetters.AutoSize = true;
-            this.lblMissedLetters.Location = new System.Drawing.Point(7, 20);
+            this.lblMissedLetters.Location = new System.Drawing.Point(6, 25);
             this.lblMissedLetters.Name = "lblMissedLetters";
-            this.lblMissedLetters.Size = new System.Drawing.Size(78, 13);
+            this.lblMissedLetters.Size = new System.Drawing.Size(135, 24);
             this.lblMissedLetters.TabIndex = 10;
             this.lblMissedLetters.Text = "Missed Letters:";
             // 
@@ -150,9 +153,10 @@
             this.gbUserGuess.Controls.Add(this.txtLetter);
             this.gbUserGuess.Controls.Add(this.btnGuessWord);
             this.gbUserGuess.Controls.Add(this.btnGuessLetter);
-            this.gbUserGuess.Location = new System.Drawing.Point(12, 361);
+            this.gbUserGuess.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbUserGuess.Location = new System.Drawing.Point(15, 431);
             this.gbUserGuess.Name = "gbUserGuess";
-            this.gbUserGuess.Size = new System.Drawing.Size(417, 81);
+            this.gbUserGuess.Size = new System.Drawing.Size(417, 123);
             this.gbUserGuess.TabIndex = 3;
             this.gbUserGuess.TabStop = false;
             this.gbUserGuess.Text = "Guess a Letter or Word";
@@ -160,41 +164,41 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(202, 24);
+            this.label2.Location = new System.Drawing.Point(202, 39);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.Size = new System.Drawing.Size(61, 24);
             this.label2.TabIndex = 5;
             this.label2.Text = "Word:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(74, 24);
+            this.label1.Location = new System.Drawing.Point(61, 39);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(37, 13);
+            this.label1.Size = new System.Drawing.Size(61, 24);
             this.label1.TabIndex = 4;
             this.label1.Text = "Letter:";
             // 
             // txtword
             // 
-            this.txtword.Location = new System.Drawing.Point(243, 21);
+            this.txtword.Location = new System.Drawing.Point(269, 36);
             this.txtword.Name = "txtword";
-            this.txtword.Size = new System.Drawing.Size(100, 20);
+            this.txtword.Size = new System.Drawing.Size(100, 29);
             this.txtword.TabIndex = 2;
             // 
             // txtLetter
             // 
-            this.txtLetter.Location = new System.Drawing.Point(115, 21);
+            this.txtLetter.Location = new System.Drawing.Point(149, 36);
             this.txtLetter.MaxLength = 1;
             this.txtLetter.Name = "txtLetter";
-            this.txtLetter.Size = new System.Drawing.Size(21, 20);
+            this.txtLetter.Size = new System.Drawing.Size(21, 29);
             this.txtLetter.TabIndex = 0;
             // 
             // btnGuessWord
             // 
-            this.btnGuessWord.Location = new System.Drawing.Point(255, 47);
+            this.btnGuessWord.Location = new System.Drawing.Point(231, 71);
             this.btnGuessWord.Name = "btnGuessWord";
-            this.btnGuessWord.Size = new System.Drawing.Size(75, 23);
+            this.btnGuessWord.Size = new System.Drawing.Size(126, 46);
             this.btnGuessWord.TabIndex = 3;
             this.btnGuessWord.Text = "Guess Word";
             this.btnGuessWord.UseVisualStyleBackColor = true;
@@ -202,9 +206,9 @@
             // 
             // btnGuessLetter
             // 
-            this.btnGuessLetter.Location = new System.Drawing.Point(77, 47);
+            this.btnGuessLetter.Location = new System.Drawing.Point(57, 71);
             this.btnGuessLetter.Name = "btnGuessLetter";
-            this.btnGuessLetter.Size = new System.Drawing.Size(75, 23);
+            this.btnGuessLetter.Size = new System.Drawing.Size(126, 46);
             this.btnGuessLetter.TabIndex = 1;
             this.btnGuessLetter.Text = "Guess Letter";
             this.btnGuessLetter.UseVisualStyleBackColor = true;
@@ -218,7 +222,7 @@
             this.quitExitToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(719, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(829, 24);
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -249,7 +253,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(719, 459);
+            this.ClientSize = new System.Drawing.Size(829, 566);
             this.Controls.Add(this.gbUserGuess);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
